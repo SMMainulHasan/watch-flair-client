@@ -1,0 +1,24 @@
+.admin-options{
+    background-color: #464850;
+    width: 50vh;
+    height: 100vh;
+}
+.admin-options h1{
+    text-align: center;
+    padding-top: 10vh;
+    margin-bottom: 10vh;
+}
+.admin-options p{
+    margin-left: 15vh;
+}
+.admin-options p a{
+    text-decoration: none;
+    font-size: 600;
+    line-height: 40px;
+}
+.admin-options img{
+    width: 18px;
+}
+.admin-container{
+    display: flex;
+}

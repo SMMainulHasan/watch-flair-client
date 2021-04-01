@@ -3,21 +3,29 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Header from "./components/Header/Header";
+import AddProduct from "./components/AddProduct/AddProduct";
+import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";
+import ManageProduct from "./components/ManageProduct/ManageProduct";
+
 
 
 function App() {
   return (
     <Router>
-      <Header />
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-        {/* <Route path="/cart">
-          
-        </Route> */}
+        <Route path="/admin">
+          <Admin />
+        </Route>
+        <Route path="/admin/manageProduct">
+          <ManageProduct />
+        </Route>
+        <Route path="/admin/addProduct">
+          <AddProduct />
+        </Route>
       </Switch>
     </Router>
   );
