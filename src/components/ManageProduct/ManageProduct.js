@@ -1,4 +1,5 @@
 import React from 'react';
+import './ManageProduct.css'
 
 const ManageProduct = () => {
     return (

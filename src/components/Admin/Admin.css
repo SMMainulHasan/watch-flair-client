@@ -1,11 +1,11 @@
 .admin-options{
     background-color: #464850;
     width: 50vh;
-    height: 100vh;
+    height: 120vh;
 }
 .admin-options h1{
     text-align: center;
-    padding-top: 10vh;
+    padding-top: 5vh;
     margin-bottom: 10vh;
 }
 .admin-options p{

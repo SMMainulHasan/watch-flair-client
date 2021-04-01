@@ -1,3 +1,28 @@
 .add-product{
     background-color: #2B2B35;
+    height: 120vh;
+    width: 166vh;
+}
+.add-product h2{
+    margin-left: 7vh;
+    padding-top: 5vh;
+}
+input{
+    color: #2B2B35;
+    padding: 1vh;
+    width: 70vh;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.name-input{
+    width: 140vh;
+}
+.addProduct-form{
+    margin: 10vh 7vh;
+    padding: 4vh;
+    border-radius: 10px;
+    background-color: #464850;
+}
+.add-btn{
+    color: white;
 }
