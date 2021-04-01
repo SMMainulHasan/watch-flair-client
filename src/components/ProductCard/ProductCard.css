@@ -1,0 +1,25 @@
+.product-cart{
+    background: #464850;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.product-cart img{
+    width: 300Px;
+}
+.product-detail{
+    padding: 20px;
+}
+.price-container{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.buy-btn{
+    padding: 10px 20px;
+    background-color: #2b2b35;
+    border: none;
+    border-radius: 8px;
+}
