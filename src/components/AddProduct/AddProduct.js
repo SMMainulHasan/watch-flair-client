@@ -1,34 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddProduct.css'
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 
 const AddProduct = () => {
     const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
+    const [imgUrl, setImgUrl] = useState();
 
-  console.log(watch("example")); // watch input value by passing the name of it
+    const onSubmit = data => {
+        const { productName, price, brand, stock, strapType } = data;
+        const productData = {
+            productName,
+            price,
+            imgUrl,
+            brand,
+            stock,
+            strapType
+        }
+    };
+
+    //Generate image url
+    const handleImgUp = e => {
+        const imgData = new FormData();
+        imgData.set('key', '2776edc2118bb2862526ca87bf8e6434');
+        imgData.append('image', e.target.files[0])
+        console.log(e.target.files[0]);
+
+        axios.post('https://api.imgbb.com/1/upload',
+            imgData)
+            .then(response => {
+                setImgUrl(response.data.data.display_url);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
     return (
         <div className="add-product">
             <h2>Add Product</h2>
-            {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
             <form className="addProduct-form" onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="">Product Name:</label><br/>
-                <input className="name-input" name="example" placeholder="Product name" ref={register} /><br/>
-                <label htmlFor="">Add Price:</label><br/>
-                <input name="exampleRequired" placeholder="Product Price"/> <br/>
-                <label htmlFor="">Strap Material:</label><br/>
-                <input name="exampleRequired" placeholder="Strap material type"/> <br/>
-                <label htmlFor="">Brand:</label><br/>
-                <input name="exampleRequired" placeholder="Brand name"/> <br/>
-                <label htmlFor="">Stock:</label><br/>
-                <input name="exampleRequired" placeholder="Stock amount"/> <br/>
-                <label htmlFor="">Upload Image:</label><br/>
-                <input name="exampleRequired" type='file'  ref={register({ required: true })}/> <br/>
-                {errors.exampleRequired && <span>This field is required</span>}
-                <br/>
-                <br/>
-                <input className="buy-btn add-btn" type="Submit"  value="Add Product"/>
+                <label>Product Name:</label><br />
+                <input className="name-input" name="productName" placeholder="Product name" ref={register({ required: true })} /><br />
+                <label>Add Price:</label><br />
+                <input placeholder="Product Price" name="price" ref={register({ required: true })} /> <br />
+                <label>Strap Material:</label><br />
+                <input placeholder="Strap material type" name="strapType" ref={register} /> <br />
+                <label>Brand:</label><br />
+                <input placeholder="Brand name" name="brand" ref={register} /> <br />
+                <label>Stock:</label><br />
+                <input placeholder="Stock amount" name="stock" ref={register} /> <br />
+                <label>Upload Image:</label><br />
+                <input name="imgUrl" type='file' onChange={handleImgUp} ref={register({ required: true })} /> <br />
+                {errors.required && <span>This field is required</span>}
+                <br />
+                <input className="buy-btn add-btn" type="Submit" value="Add Product" />
             </form>
         </div>
     );
