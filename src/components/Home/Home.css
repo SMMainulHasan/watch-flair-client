@@ -1,4 +1,8 @@
 .home{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
     background-color: #2b2b35;
     padding: 3vh 15vh;
 }
