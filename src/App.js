@@ -9,6 +9,7 @@ import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export const userContext = createContext();
 
@@ -26,9 +27,9 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/admin">
+          <PrivateRoute path="/admin">
             <Admin />
-          </Route>
+          </PrivateRoute>
           <Route path="/admin/manageProduct">
             <ManageProduct />
           </Route>
