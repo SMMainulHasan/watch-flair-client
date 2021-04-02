@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 const AddProduct = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [imgUrl, setImgUrl] = useState();
 
     const onSubmit = data => {
@@ -18,14 +18,27 @@ const AddProduct = () => {
             stock,
             strapType
         }
+        fetch('http://localhost:5055/addProduct', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(productData)
+        }).then(res => {
+            if (res.status === 200) {
+                window.alert('Product added successfully!')
+            }
+            else {
+                window.alert('Sorry try again!')
+            }
+        });
     };
 
     //Generate image url
     const handleImgUp = e => {
         const imgData = new FormData();
         imgData.set('key', '2776edc2118bb2862526ca87bf8e6434');
-        imgData.append('image', e.target.files[0])
-        console.log(e.target.files[0]);
+        imgData.append('image', e.target.files[0]);
 
         axios.post('https://api.imgbb.com/1/upload',
             imgData)
