@@ -1,6 +1,5 @@
 import React from 'react';
 import './ProductCard.css';
-import chips from '../../icons/image 37.png';
 
 const ProductCard = (props) => {
     const {imgUrl, productName, price} = props.product;

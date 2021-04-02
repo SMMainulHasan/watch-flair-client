@@ -1,0 +1,23 @@
+.google-login{
+    display: flex;
+    height: 90vh;
+    background-color: #2b2b35;
+    align-items: center;
+    justify-content: center;
+}
+.google-login img{
+    width: 50px;
+}
+.google-btn{
+    display: flex;
+    padding: 10px 15px;
+    align-items: center;
+    background-color: #464850;
+    border-radius: 50vh;
+}
+.google-btn:hover{
+    padding: 12px 17px;
+}
+.google-btn:active{
+    padding: 8px 13px;
+}

@@ -7,9 +7,10 @@ import {
 import AddProduct from "./components/AddProduct/AddProduct";
 import Admin from "./components/Admin/Admin";
 import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
 
-const userContext = createContext();
+export const userContext = createContext();
 
 function App() {
   const [user, setUser] = useState({
@@ -17,6 +18,7 @@ function App() {
     email:'',
     displayPic:''
   });
+  // console.log(user);
   return (
     <userContext.Provider value={[user, setUser]}>
       <Router>
@@ -32,6 +34,9 @@ function App() {
           </Route>
           <Route path="/admin/addProduct">
             <AddProduct />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
         </Switch>
       </Router>
