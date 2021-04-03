@@ -67,7 +67,7 @@ const AddProduct = () => {
                 <input name="imgUrl" type='file' onChange={handleImgUp} ref={register({ required: true })} /> <br />
                 {errors.required && <span>This field is required</span>}
                 <br />
-                <input className="buy-btn add-btn" type="Submit" value="Add Product" />
+                <input className="button add-btn" type="Submit" value="Add Product" />
             </form>
         </div>
     );

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import AddProduct from "./components/AddProduct/AddProduct";
 import Admin from "./components/Admin/Admin";
+import CheckOut from "./components/CheckOut/CheckOut";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/checkout">
+            <CheckOut/>
           </Route>
         </Switch>
       </Router>
