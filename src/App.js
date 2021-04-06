@@ -10,6 +10,7 @@ import CheckOut from "./components/CheckOut/CheckOut";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import ManageProduct from "./components/ManageProduct/ManageProduct";
+import Orders from "./components/Orders/Orders";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export const userContext = createContext();
@@ -40,9 +41,12 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/checkout">
+          <PrivateRoute path="/checkout/:id">
             <CheckOut/>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/orders">
+            <Orders/>
+          </PrivateRoute>
         </Switch>
       </Router>
     </userContext.Provider>
