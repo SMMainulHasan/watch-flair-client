@@ -13,7 +13,7 @@ const ManageProductData = (props) => {
             method : 'DELETE'
         })
         .then(res=> {
-            if(res.status == 200){
+            if(res.status === 200){
                const newManagePd = managePd.filter(pd => pd !== props.product);
                setManagePd(newManagePd);
             }
@@ -27,8 +27,8 @@ const ManageProductData = (props) => {
                     <p>{brand}</p>
                     <p>{price}</p>
                     <div className="edit-delete">
-                        <img src={Edit}/>
-                        <img onClick={deleteHandle} src={Delete}/>
+                        <img src={Edit} alt=""/>
+                        <img onClick={deleteHandle} src={Delete}  alt=""/>
                     </div>
                 </div>
             </div>

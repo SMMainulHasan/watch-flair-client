@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import ManageProductData from '../ManageProductData/ManageProductData';
 import './ManageProduct.css'
 import CircularProgress from '../CircularProgress/CircularProgress';
