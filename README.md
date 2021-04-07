@@ -5,11 +5,11 @@ Server repo link [https://github.com/Porgramming-Hero-web-course/full-stack-serv
 
 ## Project details
 
--It's a Ecommerce site
--You can addProduct
--And delete Product
--Also you can order place or checkout order
--You can watch your order list
+- It's a Ecommerce site
+- You can addProduct
+- And delete Product
+- Also you can order place or checkout order
+- You can watch your order list
 
 
 ### `Technology`
