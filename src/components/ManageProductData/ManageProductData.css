@@ -1,0 +1,30 @@
+.table-data{
+    display: flex;
+    justify-content: space-around;
+    padding: 1vh 2vh;
+    border-radius: 1vh;
+}
+.brand-price-action-data{
+    display: flex;
+    width: 40%;
+    margin-left: auto;
+    justify-content: space-around;
+}
+.pdName{
+    width: 60%;
+}
+.edit-delete{
+    display: flex;
+}
+.edit-delete img{
+    width: 20px;
+    margin: 0 1vh;
+    height: fit-content;
+}
+.edit-delete img:hover{
+    cursor: pointer;
+}
+.edit-delete img:active{
+    cursor: grabbing;
+    width: 15px;
+}

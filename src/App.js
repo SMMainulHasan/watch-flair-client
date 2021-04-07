@@ -21,7 +21,7 @@ function App() {
     email:'',
     displayPic:''
   });
-  // console.log(user);
+  
   return (
     <userContext.Provider value={[user, setUser]}>
       <Router>

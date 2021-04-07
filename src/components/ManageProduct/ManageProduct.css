@@ -1,3 +1,29 @@
 .manage-product{
     background-color: #2b2b35;
+    width: 163vh;
+    height: 120vh;
+}
+.manage-product h2{
+    margin-left: 7vh;
+    padding-top: 5vh;
+}
+.manage-product-container{
+    margin: 10vh 7vh;
+    padding: 4vh;
+    border-radius: 10px;
+    background-color: #464850;
+}
+.table-header{
+    display: flex;
+    justify-content: space-around;
+    padding: 1vh 2vh;
+    margin-bottom: 2vh;
+    border-radius: 1vh;
+    background-color: #383a41;
+}
+.brand-price-action{
+    display: flex;
+    width: 40%;
+    margin-left: auto;
+    justify-content: space-around;
 }

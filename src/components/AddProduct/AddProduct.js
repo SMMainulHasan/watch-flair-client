@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 const AddProduct = () => {
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, errors, reset } = useForm();
     const [imgUrl, setImgUrl] = useState();
 
     const onSubmit = data => {
@@ -18,7 +18,8 @@ const AddProduct = () => {
             stock,
             strapType
         }
-        fetch('http://localhost:5055/addProduct', {
+        if(imgUrl){
+            fetch('https://gentle-mesa-65432.herokuapp.com/addProduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -26,12 +27,16 @@ const AddProduct = () => {
             body: JSON.stringify(productData)
         }).then(res => {
             if (res.status === 200) {
+                reset();
+                setImgUrl('')
                 window.alert('Product added successfully!')
             }
             else {
                 window.alert('Sorry try again!')
             }
         });
+        }
+        
     };
 
     //Generate image url
@@ -67,7 +72,9 @@ const AddProduct = () => {
                 <input name="imgUrl" type='file' onChange={handleImgUp} ref={register({ required: true })} /> <br />
                 {errors.required && <span>This field is required</span>}
                 <br />
-                <input className="button add-btn" type="Submit" value="Add Product" />
+                {
+                    imgUrl ? <input className="button add-btn" type="Submit" value="Add Product" /> : <input className="button add-btn" type="Submit" value="Waiting for Image Upload..." />
+                }
             </form>
         </div>
     );

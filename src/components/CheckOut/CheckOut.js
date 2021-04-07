@@ -9,27 +9,29 @@ const CheckOut = () => {
     const { id } = useParams();
     const [productDetail, setProductDetail] = useState({});
     const [user] = useContext(userContext);
-    const { price, productName } = productDetail;
+    const { price, productName, brand, strapType, imgUrl, _id } = productDetail;
 
     useEffect(() => {
-        fetch(`http://localhost:5055/product-detail/${id}`)
+        fetch(`https://gentle-mesa-65432.herokuapp.com/product-detail/${id}`)
             .then(res => res.json())
             .then(data => setProductDetail(data))
     }, [])
 
     let quantity = 1;
+    const productId = _id;
 
     const placeOrder = () => {
         if (user.email && productDetail.productName) {
-            const orderProduct = { ...user, ...productDetail, quantity, OrderTime: new Date() }
+            const orderProduct = { ...user, productId, price, productName, brand, strapType, quantity, imgUrl, OrderTime: new Date() }
+            console.log(orderProduct);
 
-            fetch('http://localhost:5055/addOrderPlace', {
+            fetch('https://gentle-mesa-65432.herokuapp.com/addOrderPlace', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(orderProduct)
             }).then(res => {
                 if (res.status === 200) {
-                    window.alert('Order successfully!')
+                    window.alert('Order Placed successfully!')
                 }
                 else {
                     window.alert('Sorry try again!')
