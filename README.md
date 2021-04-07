@@ -1,4 +1,4 @@
-# WatchFlair
+# WatchFlair-Client
 
 Live site link [https://watch-flair.web.app/](https://watch-flair.web.app/). </br>
 Server repo link [https://github.com/Porgramming-Hero-web-course/full-stack-server-SMMainulHasan](https://github.com/Porgramming-Hero-web-course/full-stack-server-SMMainulHasan).
